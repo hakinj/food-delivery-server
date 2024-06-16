@@ -21,8 +21,10 @@ const port = process.env.PORT || 8080;
 app.use(express.urlencoded({extended: true}));
 
 app.use(cors({
-    origin: "https://food-delivery-sable-two.vercel.app",
-    credentials: true
+    origin: "https://food-delivery-sable-two.vercel.app/",
+    credentials: true,
+    methods: 'GET,PUT,POST,OPTIONS', 
+    allowedHeaders: 'Content-Type,Authorization'
 }))
 app.set('view engine', 'ejs')
 app.use(express.json());  
